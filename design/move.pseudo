@@ -1,25 +1,43 @@
 # Project One Move-Between-Rooms Pseudocode
 #
-# Graded checkpoint: Module Five Project One
-# Later use: conceptual support for M6; movement design for M7
-#
-# Review the course-provided movement flowchart before completing this file.
-# Write pseudocode, not Python code. Use clear indentation and course-appropriate
-# keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
+#Dungeon rooms# 
 
-# TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+Rooms = { 
 
-# TODO 2: Prompt for and receive the player's movement command.
+"dungeon entrance" : {east: underground pond} 
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+"underground pond" : {west: cave camp} 
 
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+"cave camp" : { west: castle gate, north: dungeon entrance} 
 
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+"castle gate" : {south: castle foyer, east: castle forge, north: dungeon entrance} 
 
-# TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+"castle foyer" : {south: castle throne room, east: castle forge} 
+
+"castle forge" : { north: cave camp, east: castle tower} 
+
+"castle tower" : {north: underground pond, south: castle throne room} 
+
+"castle throne room" : { } 
+
+ 
+
+Current_room = 'dungeon entrance' 
+
+While true:  
+
+Move = input("Which direction would you like to move? Enter quit to stop playing.") 
+
+If move in rooms [current_room]: 
+
+Current_room = rooms[currentroon][move] 
+
+Else: 
+
+Print("That direction is a dead end. Try again.") 
+
+Move = input() 
+
+If move in [quit]: 
+
+print("Thanks for playing") 
