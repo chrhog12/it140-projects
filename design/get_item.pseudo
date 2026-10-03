@@ -1,33 +1,40 @@
 # Project One Get-Item Pseudocode
 #
-# Graded checkpoint: Module Five Project One
-# Later use: get-item and inventory design for M7 Project Two
-#
-# Review the course-provided get-item flowchart before completing this file.
-# Write pseudocode, not Python code. Use clear indentation and course-appropriate
-# keywords such as INPUT, OUTPUT, IF, ELSE, SET, ADD, or similar terms.
+Items 
 
-START get_item
+Rooms = { 
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+'dungeon entrance' : { 'east' : underground pond,} 
 
-    # TODO 2: Prompt for and receive the player's get-item command.
+'underground pond' : {'west' : cave camp, 'item' : sword} 
 
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+'cave camp' : { 'north' : dungeon entrance, 'west': castle gate, 'item' : armor} 
 
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+"castle gate" : {south: castle foyer, east: castle forge, north: dungeon entrance. 'item': helmet} 
 
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+"castle foyer" : {south: castle throne room, east: castle forge, 'item': shield } 
 
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+"castle forge" : { north: cave camp, east: castle tower, 'item': bow} 
 
-END get_item
+"castle tower" : {north: underground pond, south: castle throne room, item: potion} 
 
+"castle throne room" : {} 
 
-# References
+ 
+
+ 
+
+Inventory = [] 
+
+Current room = 'dungeon entrance'  
+
+ 
+
+Def get item(move_input): 
+
+	Global current_room 
+
+	Roomdetails = rooms[currentroom] 
+
+if 'item' in room_details and move_input == f"get {room_details['item']}".lower(): 
 
